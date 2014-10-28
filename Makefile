@@ -6,7 +6,8 @@ LDFLAGS    = -lftd2xx
 # Platform-specific rules
 ifeq ($(shell uname -s),Darwin)
   # Mac OS X
-  CFLAGS   = -fast -fomit-frame-pointer -m32 -I/usr/local/include/ -L/usr/local/lib/ 
+  CFLAGS   = -fast -fomit-frame-pointer -m32 -I/usr/local/include/
+  LDFlags += -L/usr/local/lib/
   SUDO     = sudo
 endif
 ifeq ($(shell uname -s),Linux)
